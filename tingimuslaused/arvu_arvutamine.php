@@ -1,18 +1,29 @@
 <?php
-// defineerime arvu
-$etteAntud = 20;
-// Lubame kasutajale arvata
-$kasutajaArv = 35;
-// Hakkame võrdlema
-if($etteAntudArv == $kasutajaArv){
-    // arvud on vordsed, seega arvasid ara
-    echo 'Tubli! Arvasid ara';
+// defineerime arv ette
+$etteAndtudArv = 20;
+// lubame kasutajale arvata
+$kasutajaArv = 20;
+// hakkame võrdlema
+if($etteAndtudArv == $kasutajaArv){
+    // arvud on võrdsed, seega arvasid ära
+    echo 'Tubli! Arvasid ära!<br>';
+    echo 'Arv on '.$kasutajaArv.'<br>';
 } else {
-    // arvud ei ole vordsed
-    // kas vahemik ette antud ja kasutaja arvude vahel on vaiksem voi vordne 5-ga
-    $vahemik = $kasutajaArv - $etteAntudArv;
-    if($vahemik <=5) {
-        // julgestame, et on juba tulemus lahedal
-        echo 'Veel ei arvanud ara, aga juba hasti lahedal'
+    // arvud EI OLE võrdsed
+    // kas vahemik ette antud ja kasutaja arvude vahel on
+    // väiksem või võrdne 5-ga
+    // kui arvud on negatiivsed, siis teisendame vahemiku
+    // leidmiseks posiitiivseteks arvudeks
+    $vahemik = abs($kasutajaArv - $etteAndtudArv);
+    if($vahemik <= 5){
+        // jugestame, et on juba tulemus lähedal
+        echo 'Veel ei arvanud ära, aga juba hästi lähedal<br>';
+    }
+    if($kasutajaArv > $etteAndtudArv) {
+        // kasutaja pakkumine on suurem kui ette antud
+        echo $kasutajaArv.' on suurem, kui ette antud arv<br>';
+    } else {
+        // kasutaja pakkumine on väiksem kui ette antud
+        echo $kasutajaArv.' on väiksem, kui ette antud arv<br>';
     }
 }
